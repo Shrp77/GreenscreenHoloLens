@@ -53,7 +53,6 @@ namespace UnityStandardAssets.ImageEffects
                 ReportAutoDisable ();
             return isSupported;
         }
-
         void OnRenderImage (RenderTexture source, RenderTexture destination) {
             if (CheckResources()==false) {
                 Graphics.Blit (source, destination);
