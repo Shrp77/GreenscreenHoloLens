@@ -45,7 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Holograms\Support\AniCrane\AnimationSpeed.cs" />
+     <Compile Include="Assets\Holograms\Support\Fitbox\Fitbox.cs" />
+     <Compile Include="Assets\Holograms\Support\Fitbox\Interpolator.cs" />
+     <Compile Include="Assets\Holograms\Support\Spatial Mapping\SpatialMapping.cs" />
+     <Compile Include="Assets\Holograms\Support\Underworld\UnderworldReset.cs" />
+     <Compile Include="Assets\Holograms\Support\Underworld\UnderworldSound.cs" />
      <Compile Include="Assets\Scripts\SpeechManager.cs" />
+     <Compile Include="Assets\Scripts\WorldCursor.cs" />
+     <None Include="Assets\Resources\Wireframe.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b20-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

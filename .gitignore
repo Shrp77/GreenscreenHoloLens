@@ -29,3 +29,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Greenscreen/Library/
+Greenscreen/Temp/
+Greenscreen/App/
+Greenscreen/UWP/

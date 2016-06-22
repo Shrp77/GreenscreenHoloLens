@@ -6,8 +6,9 @@ using UnityEngine.Windows.Speech;
 
 public class SpeechManager : MonoBehaviour
 {
-    public GameObject ForestScene;
-    public GameObject IslandScene;
+    public GameObject StoryBoard;
+    public GameObject AssetsBoard;
+	public GameObject Stage;
     private KeywordRecognizer keywordRecognizer;
     private readonly Dictionary<string, Action> keywords = new Dictionary<string, Action>();
 
@@ -21,9 +22,9 @@ public class SpeechManager : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        keywords.Add("Island Scene", ShowIslandScene);
-        keywords.Add("Forest Scene", ShowForestScene);
-        keywords.Add("Scene Menu", ShowSceneMenu);
+        keywords.Add("Place Story Board", PlaceStoryBoard);
+        keywords.Add("Place Assets Board", PlaceAssetsBoard);
+        keywords.Add("Place Stage", PlaceStage);
 
         keywords.Add("Lens 18", Set18mmLens);
         keywords.Add("Lens 21", Set21mmLens);
@@ -108,21 +109,34 @@ public class SpeechManager : MonoBehaviour
         }
     }
 
-    private void ShowIslandScene()
+    private void PlaceStoryBoard()
     {
-        ForestScene.SetActive(false);
-        IslandScene.SetActive(true);
+		PlaceObject (StoryBoard);
+	}
+
+    private void PlaceAssetsBoard()
+    {
+		PlaceObject (AssetsBoard);
+	}
+
+    private void PlaceStage()
+    {
+		PlaceObject (Stage);
     }
 
-    private void ShowForestScene()
-    {
-        ForestScene.SetActive(true);
-        IslandScene.SetActive(false);
-    }
+	private void PlaceObject(GameObject go)
+	{
+		var headPosition = Camera.main.transform.position;
+		var gazeDirection = Camera.main.transform.forward;
 
-    private void ShowSceneMenu()
-    {
-    }
+		RaycastHit hitInfo;
+		if (Physics.Raycast (headPosition, gazeDirection, out hitInfo)) 
+		{
+			go.transform.position = hitInfo.point;
+			go.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
+			go.SetActive (true);
+		} 
+	}
 
     private void ShowLensMenu()
     {
