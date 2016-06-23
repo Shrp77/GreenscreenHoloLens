@@ -6,6 +6,7 @@ using UnityEngine.Windows.Speech;
 
 public class SpeechManager : MonoBehaviour
 {
+	public float FloatDistance = 0.25f;
     public GameObject StoryBoard;
     public GameObject AssetsBoard;
 	public GameObject Stage;
@@ -114,6 +115,11 @@ public class SpeechManager : MonoBehaviour
         MainMenu.SetActive(true);
     }
 
+	void Update()
+	{
+		//PlaceObject (StoryBoard);
+	}
+
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         Action keywordAction;
@@ -144,10 +150,10 @@ public class SpeechManager : MonoBehaviour
 		var gazeDirection = Camera.main.transform.forward;
 
 		RaycastHit hitInfo;
-		if (Physics.Raycast (headPosition, gazeDirection, out hitInfo)) 
+		if (Physics.Raycast (headPosition, gazeDirection, out hitInfo)) //, SpatialMapping.PhysicsRaycastMask)) 
 		{
-			go.transform.position = hitInfo.point;
-			var rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
+			go.transform.position = hitInfo.point + hitInfo.normal * FloatDistance; 
+			var rotation = Quaternion.LookRotation (-1 * hitInfo.normal); //  Quaternion.FromToRotation (Vector3.up, hitInfo.normal) * go.transform.rotation;
 			rotation.x = 0;
 			rotation.z = 0;
 			go.transform.rotation = rotation;

@@ -57,14 +57,18 @@
      <Compile Include="Assets\Scripts\GazeGestureManager.cs" />
      <Compile Include="Assets\Scripts\LensMenu.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Scene1.cs" />
      <Compile Include="Assets\Scripts\SixteenMM.cs" />
      <Compile Include="Assets\Scripts\SpeechManager.cs" />
+     <Compile Include="Assets\Scripts\SphereCommand.cs" />
+     <Compile Include="Assets\Scripts\StoryBoardSelector.cs" />
      <Compile Include="Assets\Scripts\TapToPlaceParent.cs" />
      <Compile Include="Assets\Scripts\ThirtyFiveMM.cs" />
      <Compile Include="Assets\Scripts\TwentyEightMM.cs" />
      <Compile Include="Assets\Scripts\TwentyOneMM.cs" />
      <Compile Include="Assets\Scripts\WorldCursor.cs" />
      <None Include="Assets\Resources\Wireframe.shader" />
+     <None Include="Assets\Shaders\Occlusion.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b20-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

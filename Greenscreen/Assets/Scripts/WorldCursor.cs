@@ -3,10 +3,6 @@ using System.Collections;
 
 public class WorldCursor : MonoBehaviour {
 
-	public GameObject StoryBoard;
-	public GameObject AssetsBoard;
-	public GameObject Stage;
-
 	private MeshRenderer meshRenderer;
 
 	// Use this for initialization

@@ -343,11 +343,11 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: Greenscreen
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 80aa79f7cbebd201
   metroApplicationDescription: Greenscreen
   wsaImages: {}
   metroTileShortName: 
